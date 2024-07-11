@@ -65,4 +65,3 @@ def  lock():
 def unlock():
     sg90.duty(58)
 
-lock()

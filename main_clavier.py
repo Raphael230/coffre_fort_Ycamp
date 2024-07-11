@@ -6,7 +6,7 @@
 
 from keypad import Keypad4x4 # Bibliothèque pour gérer le clavier
 from main_led import clignotement_jaune
-
+from servo_moteur import lock
 keyboard = Keypad4x4() # Instanciation du clavier
 
 
@@ -22,7 +22,10 @@ def operation(mdp) :
             print(OSS)
 
         return mdp == OSS # boolean 
-
+    
+def coffre():
+    if keyboard.read_key == "CCCC" :
+        lock()
         
 
 
