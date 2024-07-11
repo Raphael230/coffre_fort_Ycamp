@@ -9,6 +9,7 @@ from time import sleep_ms # Classe pour temporiser
 # La LED est assignéeà la broche D4
 vert = Pin(23,  mode=Pin.OUT)
 rouge = Pin(21, mode=Pin.OUT)
+jaune = Pin(19, mode=Pin.OUT)
 
 # while True :
 # 	sleep_ms(500) # Pose 0.5 seconde
@@ -35,5 +36,11 @@ def dark():
 		sleep_ms(1000)
 		print("LED éteinte")
 
-dark()
+def contact(press):
+	press = 0
+	if press == 1 :
+		jaune.on()
+		print("validé")	
+
+
 	
