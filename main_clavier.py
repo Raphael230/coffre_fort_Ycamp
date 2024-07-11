@@ -5,10 +5,11 @@
 #-----------------------------------------------------------------
 
 from keypad import Keypad4x4 # Bibliothèque pour gérer le clavier
+from main_led import clignotement_jaune
 
 keyboard = Keypad4x4() # Instanciation du clavier
 
-mdp = "159D"
+
 
 def operation(mdp) :
     while True:
@@ -16,15 +17,13 @@ def operation(mdp) :
 	    #print(key) # Affichage de la touche appuyée
         for x in range(len(mdp)):  # len(mdp) veut dire qu'il renverra autant de caractère qu'il y a dans mdp 
             key = keyboard.read_key() # Lecture de la touche appuyée
+            clignotement_jaune()
             OSS += str(key)
             print(OSS)
 
-        if mdp == OSS :
-            return True
-        # else :
-        #     return False
+        return mdp == OSS # boolean 
+
         
-print(operation(mdp))
 
 
 

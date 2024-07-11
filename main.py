@@ -1,5 +1,12 @@
 from main_clavier import operation
-from servo_moteur import rota
+from servo_moteur import lock, unlock
 
-if operation == True :
-    rota()
+
+while True :
+    print("Ok")
+    if operation("159D"):
+        unlock()
+    else :
+        lock()
+    
+

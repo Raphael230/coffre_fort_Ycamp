@@ -57,15 +57,12 @@
 
 from machine import Pin,PWM
 import time
+sg90 = PWM(Pin(22, mode=Pin.OUT))
+sg90.freq(50)
 
-def rota () :
-    sg90 = PWM(Pin(22, mode=Pin.OUT))
-    sg90.freq(50)
+def  lock():
+    sg90.duty(105)
+def unlock():
+    sg90.duty(58)
 
-    while True:
-        sg90.duty(100)
-        time.sleep(1)
-        sg90.duty(60)
-        time.sleep(1)
-
-print(rota())
+lock()

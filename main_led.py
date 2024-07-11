@@ -20,27 +20,25 @@ jaune = Pin(19, mode=Pin.OUT)
 # 	print("LED allumée")
 
 
-def light ():
-	while True :
-		vert.on()
-		sleep_ms(1000) # Pose 0.5 seconde
-		vert.off()
-		sleep_ms(1000)
-		print("LED éteinte")
+def clignotement_vert ():
+	vert.on()
+	sleep_ms(500) # Pose 0.5 seconde
+	vert.off()
+	sleep_ms(500)
+	print("NICE")
 
-def dark():
-	while True :
-		rouge.on()
-		sleep_ms(1000) # Pose 0.5 seconde
-		rouge.off()
-		sleep_ms(1000)
-		print("LED éteinte")
+def clignotement_rouge():
+	rouge.on()
+	sleep_ms(500) # Pose 0.5 seconde
+	rouge.off()
+	sleep_ms(500)
+	print("ERROR")
 
-def contact(press):
-	press = 0
-	if press == 1 :
-		jaune.on()
-		print("validé")	
+def clignotement_jaune():
+	jaune.on()
+	sleep_ms(500) # Pose 0.5 seconde
+	jaune.off()
+	sleep_ms(500)
 
 
 	
