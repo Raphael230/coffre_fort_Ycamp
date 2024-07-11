@@ -1,5 +1,6 @@
 import mfrc522
 from os import uname
+from main_led import clignotement_jaune
 def uidToString(uid):
     mystring = ""
     for i in uid:
@@ -25,6 +26,7 @@ def do_read():
 
 				if stat == rdr.OK:
 					print("New card detected")
+					clignotement_jaune()
 					print(uidToString(raw_uid))
 
 
