@@ -11,10 +11,6 @@ def do_read():
 
 	rdr = mfrc522.MFRC522(sck=18, mosi=23, miso=19, rst=3, cs=21)
 
-	print("")
-	print("Place card before reader to read from address 0x08")
-	print("")
-
 	try:
 		while True:
 
@@ -25,9 +21,8 @@ def do_read():
 				(stat, raw_uid) = rdr.SelectTagSN()
 
 				if stat == rdr.OK:
-					print("New card detected")
-					clignotement_jaune()
-					print(uidToString(raw_uid))
+					return "902A3D03" == uidToString(raw_uid)
+						
 
 
 	except KeyboardInterrupt:
