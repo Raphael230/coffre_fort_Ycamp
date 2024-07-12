@@ -24,8 +24,11 @@ def operation(mdp) :
         return mdp == OSS # boolean 
     
 def coffre():
-    if keyboard.read_key == "CCCC" :
-        lock()
+    while True :
+        if keyboard.read_key() == "C" :
+            clignotement_jaune()
+            lock()
+            return True
         
 
 
